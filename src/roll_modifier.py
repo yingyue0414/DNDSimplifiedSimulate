@@ -53,4 +53,4 @@ def modify(dice_rolls, str_modifier, success_threshold=4):
     for i in range(0, len(adjusted_rolls)):
         modifier.append(adjusted_rolls[i] - dice_rolls[i])
 
-    return modifier, adjusted_rolls
+    return modifier, adjusted_rolls, success_count, failure_count

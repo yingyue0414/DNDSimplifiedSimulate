@@ -71,6 +71,14 @@ class DiceRoller(QWidget):
         self.end_result_label = QLabel('End results: ', self)
         self.end_result_label.setFont(big_font)
         self.layout.addWidget(self.end_result_label)
+        
+        self.success_count_label = QLabel('Success: ', self)
+        self.success_count_label.setFont(big_font)
+        self.layout.addWidget(self.success_count_label)
+        
+        self.failure_count_label = QLabel('Failure: ', self)
+        self.failure_count_label.setFont(big_font)
+        self.layout.addWidget(self.failure_count_label)
 
         self.setLayout(self.layout)
         
@@ -95,11 +103,13 @@ class DiceRoller(QWidget):
 
         str_modifier = int(self.str_modifier_input.text())
 
-        modifier_str, end_result_str = roll_modifier.modify(roll_results, str_modifier)
+        modifier, end_result, success_count, failure_count  = roll_modifier.modify(roll_results, str_modifier)
 
         self.result_label.setText(f'Roll results:   {roll_results_str}')
-        self.modifier_label.setText(f'Modifier:       {modifier_str}')
-        self.end_result_label.setText(f'End results:    {end_result_str}')
+        self.modifier_label.setText(f'Modifier:       {modifier}')
+        self.end_result_label.setText(f'End results:    {end_result}')
+        self.success_count_label.setText(f'Success:    {success_count}')
+        self.failure_count_label.setText(f'Failure:    {failure_count}')
 
 def main():
     """
