@@ -13,7 +13,7 @@ import sys
 import random
 from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QLineEdit, QHBoxLayout
 from PyQt6.QtGui import QFont
-import roll_modifier
+import src.roll_modifier
 
 class DiceRoller(QWidget):
     """
